@@ -5,14 +5,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Time Dashboard</title>
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<title>Insert title here</title>
 </head>
 <body>
-<h1>Time Dashboard</h1>
-<div class="flex-container">
-  <div><a href="/time"> Time Template</a></div>
-  <div><a href="/date">Date Template</a></div>
-</div>
+<center>
+<h1> plus two</h1>
+</center>
 </body>
 </html>

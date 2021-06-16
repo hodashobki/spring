@@ -23,7 +23,7 @@ public class DateController {
 	@RequestMapping("/date")
     public String hello2(Model viewModel) {
 		 Date date = new Date();
-		 SimpleDateFormat formatter = new SimpleDateFormat("E,'the' dd 'of' MMM yyyy");  
+		 SimpleDateFormat formatter = new SimpleDateFormat("E,'the' dd 'of' MMMM yyyy");  
 		   
 		    
 		   
