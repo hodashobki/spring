@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Random;
 import org.springframework.stereotype.Controller;
@@ -36,25 +37,25 @@ public String proceesMony(@RequestParam(value="gold") String gold,HttpSession se
 	int goold=(int)session.getAttribute("counter");
 //	if(RequestMethod.equals"POST")
 	//	ArrayList<String> activity=new ArrayList<String>;
-	LocalDateTime currenttime=LocalDateTime .now();
-	SimpleDateFormat formatter = new SimpleDateFormat("dd/MMMM/yyyy HH:mm:ss");  
+	LocalDateTime currenttime=LocalDateTime.now();
+	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MMMM/yyyy HH:mm:ss");  
 	ArrayList<String> activity=(ArrayList<String>)session.getAttribute("activity");
 	if(gold.equals("farm")) {
 		rangold=rand.nextInt((20-10)+1)+10;
-		activity.add(String.format("You entered a farm and earned %d gold",rangold));
+		activity.add(String.format("You entered a farm and earned %d gold "+currenttime.format(formatter) ,rangold));
 	}
 	else if(gold.equals("cave")) {
 		rangold=rand.nextInt((10-5)+1)+5;
-		activity.add(String.format("You entered a cave and earned %d gold \n",rangold));
+		activity.add(String.format("You entered a cave and earned %d gold "+currenttime.format(formatter),rangold));
 	}
 	else if(gold.equals("house")) {
 		rangold=rand.nextInt((5-2)+1)+2;
-		activity.add(String.format("You entered a house and earned %d gold \n",rangold));
+		activity.add(String.format("You entered a house and earned %d gold "+currenttime.format(formatter),rangold));
 	}
 	else if(gold.equals("casino")) {
 		rangold=rand.nextInt(50+50)+1-50;
 		if(rangold>0) {
-			activity.add(String.format("You entered a casino and earned %d gold \n",rangold));
+			activity.add(String.format("You entered a casino and earned %d gold"+currenttime.format(formatter),rangold));
 		}
 		else {
 			activity.add(String.format("<span style='color:red;'>You entered a casino and lost %d gold..Outch</span>",rangold));

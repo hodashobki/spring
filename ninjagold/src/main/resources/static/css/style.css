@@ -22,9 +22,9 @@ div.active{
     border: 2px solid grey;
     width: 600px;
 }
-.red{
+#red{
     color: red;
 }
-.green{
+#green{
     color: green;
 }
