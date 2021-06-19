@@ -1,0 +1,30 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+main{
+    display: flex;
+    justify-content: space-between;
+}
+div{
+    width: 250px;
+    border: 1px solid black;
+    background:skyblue;
+     
+}
+div ,p ,form{
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+}
+div.active{
+    border: 2px solid grey;
+    width: 600px;
+}
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}
