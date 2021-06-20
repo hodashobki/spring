@@ -32,11 +32,11 @@ public String gold(HttpSession session,Model model) {
 }
 @RequestMapping(value="process_money", method=RequestMethod.POST)
 public String proceesMony(@RequestParam(value="gold") String gold,HttpSession session,Model model) {
+//	if(RequestMethod.equals"POST")
+	//	ArrayList<String> activity=new ArrayList<String>;
 	Random rand = new Random();
 	int rangold = 0;
 	int goold=(int)session.getAttribute("counter");
-//	if(RequestMethod.equals"POST")
-	//	ArrayList<String> activity=new ArrayList<String>;
 	LocalDateTime currenttime=LocalDateTime.now();
 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MMMM/yyyy HH:mm:ss");  
 	ArrayList<String> activity=(ArrayList<String>)session.getAttribute("activity");
@@ -58,7 +58,7 @@ public String proceesMony(@RequestParam(value="gold") String gold,HttpSession se
 			activity.add(String.format("You entered a casino and earned %d gold"+currenttime.format(formatter),rangold));
 		}
 		else {
-			activity.add(String.format("<span style='color:red;'>You entered a casino and lost %d gold..Outch</span>",rangold));
+			activity.add(String.format("You entered a casino and lost %d gold..Outch",rangold));
 		}
 	}
 	int totalgold=rangold+=goold;
