@@ -31,7 +31,9 @@ public class Users {
 	        return "registrationPage.jsp";
 	    }
 	    @RequestMapping("/login")
-	    public String login() {
+	    public String login(HttpSession session) {
+	    	if(session.getAttribute("userId")!=null)
+	    	return "redirect:/home"; 
 	        return "loginPage.jsp";
 	    }
 	    
